@@ -10,9 +10,10 @@ public class ObstacleCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            player.GetComponent<PlayerMovement>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
-            
+            Debug.Log("Game Over");
         }
     }
 }
